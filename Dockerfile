@@ -1,4 +1,4 @@
-FROM node:7-onbuild
+FROM java:8
 
 MAINTAINER "sanjayhacks4567@gmail.com"
 
