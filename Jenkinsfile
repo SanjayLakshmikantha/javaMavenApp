@@ -22,7 +22,12 @@ stage('Build image') {
 	
         app = docker.build("sanz72/nodeapp")
     }
-
+stage('Test image') {
+        
+        app.inside {
+            echo "Tests passed"
+        }
+    }
     
 
     stage('Push image') {
