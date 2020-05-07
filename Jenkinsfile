@@ -29,7 +29,8 @@ stage('Build image') {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry( '', 'dockerhub') {
+	   sh 'docker logout'
+        docker.withRegistry( 'https://registry.hub.docker.com', 'dockerhub') {
             apps.push("${env.BUILD_NUMBER}")
             apps.push("latest")
             } 
