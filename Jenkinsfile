@@ -14,7 +14,7 @@ stage('Maven Test') {
 
 stage('Build image') {
         /* This builds the actual image */
-
+	sudo su
         app = docker.build("sanz72/nodeapp")
     }
 
