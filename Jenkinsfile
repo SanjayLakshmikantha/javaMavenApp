@@ -12,11 +12,14 @@ stage('Maven Test') {
 	sh label: 'Build', script: 'mvn test'
 	}
 
+stage('sudo') {
+
+	sh 'sudo su'
+	
+    }
 stage('Build image') {
         /* This builds the actual image */
-	steps {
-		sh 'sudo su'
-	}
+	
         app = docker.build("sanz72/nodeapp")
     }
 
