@@ -23,12 +23,12 @@ node {
         //app = docker.build("")
     }
 
-    stage('Test image') {
+ /*   stage('Test image') {
         
         app.inside {
             echo "Tests passed"
         }
-    }
+    }*/
 
     stage('Push image') {
         /* 
