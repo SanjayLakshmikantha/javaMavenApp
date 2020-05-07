@@ -18,8 +18,9 @@ node {
 
     stage('Build image') {
         /* This builds the actual image */
-
-        app = docker.build("")
+	app = docker.build("sanjay/dockerapp")
+         app.push()
+        //app = docker.build("")
     }
 
     stage('Test image') {
