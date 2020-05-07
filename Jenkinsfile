@@ -20,7 +20,7 @@ stage('read write permission') {
 stage('Build image') {
         /* This builds the actual image */
 	
-        app = docker.build("sanz72/nodeapp")
+        app = docker.build("sanz73/nodeapp")
     }
 
     stage('Test image') {
