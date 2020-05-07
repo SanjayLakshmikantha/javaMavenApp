@@ -38,6 +38,6 @@ stage('Build image') {
     }*/
 
 stage('run container') {
-	sh 'docker container run --name sanjay -d -p 8080:80 nodeapp' 
+	sh 'docker container run --name sanjay -d -p 8080:80 sanz72/nodeapp' 
 }
 }
