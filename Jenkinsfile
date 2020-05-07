@@ -46,7 +46,7 @@ node {
 		*/
           
          sh label: '', script: 'docker pull sanjay/dockerapp'
-            } */
+            } 
                 echo "Trying to Pull Docker Build to DockerHub"
     }
 }
