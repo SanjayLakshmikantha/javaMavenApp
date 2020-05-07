@@ -8,8 +8,8 @@ stage('Clone repository') {
         checkout scm
     }
   
-stage('Maven Build') {
-	sh label: 'Build', script: 'mvn build'
+stage('Maven Test') {
+	sh label: 'Build', script: 'mvn test'
 	}
 
 stage('Build image') {
