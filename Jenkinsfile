@@ -12,7 +12,7 @@ node {
 	
     stage('read write permission') {
 
-	sh 'sudo chmod 777 /var/run/docker.sock'
+	sh 'sudo su'
 	
     }
 
