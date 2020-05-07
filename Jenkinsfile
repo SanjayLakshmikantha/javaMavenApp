@@ -1,6 +1,6 @@
 node {
 
-def app
+def apps
     
 stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
@@ -20,11 +20,11 @@ stage('read write permission') {
 stage('Build image') {
         /* This builds the actual image */
 	
-        app = docker.build("sanz72/nodeapp")
+        apps = docker.build("sanz72/nodeapp")
     }
 stage('Test image') {
         
-        app.inside {
+        apps.inside {
             echo "Tests passed"
         }
     }
@@ -34,9 +34,9 @@ stage('Test image') {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+        docker.withRegistry( '', 'dockerhub') {
+            apps.push("${env.BUILD_NUMBER}")
+            apps.push("latest")
             } 
                 echo "Trying to Push Docker Build to DockerHub"
     }
