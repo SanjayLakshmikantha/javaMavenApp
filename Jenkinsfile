@@ -2,9 +2,11 @@ node {
 
 def app
     
-stage('Git CheckOut') {    
-	git url: 'https://github.com/SanjayLakshmikantha/javaMavenApp.git'
-	}
+stage('Clone repository') {
+        /* Cloning the Repository to our Workspace */
+
+        checkout scm
+    }
   
 stage('Maven Build') {
 	sh label: 'Build', script: 'mvn build'
