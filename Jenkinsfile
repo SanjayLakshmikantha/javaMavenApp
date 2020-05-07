@@ -12,14 +12,14 @@ node {
 	
     stage('read write permission') {
 
-	sh 'sudo su'
+	sh 'sudo chmod 777 /var/run/docker.sock'
 	
     }
 
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("anandr72/nodeapp")
+        app = docker.build("")
     }
 
     stage('Test image') {
