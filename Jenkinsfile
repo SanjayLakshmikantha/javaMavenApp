@@ -12,9 +12,9 @@ stage('Maven Test') {
 	sh label: 'Build', script: 'mvn test'
 	}
 
-stage('sudo') {
+stage('read write permission') {
 
-	sh 'sudo su'
+	sh 'sudo chmod 777 /var/run/docker.sock'
 	
     }
 stage('Build image') {
