@@ -25,7 +25,7 @@ stage('Build image') {
 
     
 
-    stage('Push image') {
+/*    stage('Push image') {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
@@ -35,5 +35,7 @@ stage('Build image') {
             apps.push("latest")
             } 
                 echo "Trying to Push Docker Build to DockerHub"
-    }
+    }*/
+stage('run container') {
+	sh 'docker container run --name sanjay -d -p 8080:80 nodeapp' 
 }	
