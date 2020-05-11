@@ -18,7 +18,7 @@ node {
 
     stage('Build image') {
         /* This builds the actual image */
-	app = docker.build("dockerapp")
+	app = docker.build("sanjay/dockerapp")
         
         //app = docker.build("")
     }
@@ -40,7 +40,7 @@ node {
 	    sh label: '', script: 'docker logout'
 	    sh label: '', script: 'docker login -u sanjaylakshmikantha -p Sudha4567_Feb'
          //sh label: '', script: 'docker tag mtkcc sahana1212/mtkcc'
-         sh label: '', script: 'docker push sanjaylakshmikantha/dockerapp:latest'
+         sh label: '', script: 'docker push sanjay/dockerapp'
 
         //    } 
                 echo "Trying to Push Docker Build to DockerHub"
