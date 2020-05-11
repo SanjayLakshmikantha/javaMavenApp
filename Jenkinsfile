@@ -16,11 +16,11 @@ node {
 	
     }
 
- //   stage('Build image') {
+    stage('Build image') {
         /* This builds the actual image */
-/*	app = docker.build("sanjaylakshmikantha/dockerapp:latest")
+	app = docker.build("sanjaylakshmikantha/dockerapp:v1")
         
-    }*/
+    }
 
  /*   stage('Test image') {
         
@@ -29,18 +29,18 @@ node {
         }
     }*/
 
- /*   stage('Push image') {
+    stage('Push image') {
        
 	    sh label: '', script: 'docker logout'
 	    sh label: '', script: 'docker login -u sanjaylakshmikantha -p Sudha4567_Feb'
          //sh label: '', script: 'docker tag mtkcc sahana1212/mtkcc'
-         sh label: '', script: 'docker push sanjaylakshmikantha/dockerapp:latest'
+         sh label: '', script: 'docker push sanjaylakshmikantha/dockerapp:v1'
 
                 echo "Trying to Push Docker Build to DockerHub"
-    }*/
+    }
 	stage('Pull image from dockerhub') {
           
-        sh label: '', script: 'docker pull sanjaylakshmikantha/dockerapp:latest'
+        sh label: '', script: 'docker pull sanjaylakshmikantha/dockerapp:v1'
             
                 echo "Trying to Pull Docker Build to DockerHub" 
     }
