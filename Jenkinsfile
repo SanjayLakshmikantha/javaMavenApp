@@ -41,7 +41,7 @@ node {
          //sh label: '', script: 'docker tag mtkcc sahana1212/mtkcc'
          sh label: '', script: 'docker push sanjay/dockerapp'
 
-            } 
+        //    } 
                 echo "Trying to Push Docker Build to DockerHub"
     }
 //	stage('Pull image from dockerhub') {
@@ -51,6 +51,6 @@ node {
           
     /*     sh label: '', script: 'docker pull sanjay/dockerapp'
             } 
-                echo "Trying to Pull Docker Build to DockerHub" */
-    }
+                echo "Trying to Pull Docker Build to DockerHub" 
+    }*/
 }
