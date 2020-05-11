@@ -34,19 +34,23 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+       /* docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            app.push("latest") */
+	    sh label: '', script: 'docker login -u sanjaylakshmikantha -p Sudha4567_Feb'
+         //sh label: '', script: 'docker tag mtkcc sahana1212/mtkcc'
+         sh label: '', script: 'docker push sanjay/dockerapp'
+
             } 
                 echo "Trying to Push Docker Build to DockerHub"
     }
-	stage('Pull image from dockerhub') {
+//	stage('Pull image from dockerhub') {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
           
-         sh label: '', script: 'docker pull sanjay/dockerapp'
+    /*     sh label: '', script: 'docker pull sanjay/dockerapp'
             } 
-                echo "Trying to Pull Docker Build to DockerHub"
+                echo "Trying to Pull Docker Build to DockerHub" */
     }
 }
