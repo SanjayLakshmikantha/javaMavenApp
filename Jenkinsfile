@@ -40,7 +40,7 @@ node {
 	    sh label: '', script: 'docker logout'
 	    sh label: '', script: 'docker login -u sanjaylakshmikantha -p Sudha4567_Feb'
          //sh label: '', script: 'docker tag mtkcc sahana1212/mtkcc'
-         sh label: '', script: 'docker push sanjaylakshmikantha/sanjay/dockerapp'
+         sh label: '', script: 'docker push sanjaylakshmikantha/sanjay/dockerapp:latest'
 
         //    } 
                 echo "Trying to Push Docker Build to DockerHub"
