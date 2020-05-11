@@ -37,6 +37,7 @@ node {
        /* docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest") */
+	    sh label: '', script: 'docker logout'
 	    sh label: '', script: 'docker login -u sanjaylakshmikantha -p Sudha4567_Feb'
          //sh label: '', script: 'docker tag mtkcc sahana1212/mtkcc'
          sh label: '', script: 'docker push sanjay/dockerapp'
