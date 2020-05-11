@@ -39,12 +39,15 @@ node {
                 echo "Trying to Push Docker Build to DockerHub"
     }*/
 	stage('Pull image from dockerhub') {
-        /* 
-			You would need to first register with DockerHub before you can push images to your account
-		*/
           
         sh label: '', script: 'docker pull sanjaylakshmikantha/dockerapp:latest'
             
                 echo "Trying to Pull Docker Build to DockerHub" 
+    }
+	stage('Run Image') {
+          
+        sh label: '', script: 'docker run -it -d sanjaylakshmikantha/dockerapp'
+            
+                echo "Trying to run docker image" 
     }
 }
